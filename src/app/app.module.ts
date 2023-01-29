@@ -16,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { QuizCardComponent } from './quizzes/quiz-card/quiz-card.component';
+import { QuizPlayComponent } from './quizzes/quiz-play/quiz-play.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { QuizCardComponent } from './quizzes/quiz-card/quiz-card.component';
     HeaderComponent,
     FooterComponent,
     QuizzesComponent,
-    QuizCardComponent
+    QuizCardComponent,
+    QuizPlayComponent
   ],
   imports: [
     BrowserModule,
