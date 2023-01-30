@@ -1,5 +1,7 @@
+
 import {Component, Input, OnInit} from '@angular/core';
 import {Quiz} from "../../model/quiz.model";
+
 
 @Component({
   selector: 'app-quiz-card',
@@ -7,6 +9,7 @@ import {Quiz} from "../../model/quiz.model";
   styleUrls: ['./quiz-card.component.css']
 })
 export class QuizCardComponent implements OnInit {
+
   @Input() quiz!: Quiz;
   @Input() index!: number;
   constructor() { }
@@ -14,6 +17,4 @@ export class QuizCardComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.quiz);
 
-  }
-
-}
+}}

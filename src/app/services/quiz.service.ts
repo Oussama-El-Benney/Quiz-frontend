@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
@@ -8,6 +9,7 @@ import {Quiz} from "../model/quiz.model";
   providedIn: 'root'
 })
 export class QuizService {
+
 
   constructor(private http:HttpClient) { }
 
@@ -20,5 +22,4 @@ export class QuizService {
     });
     return this.http.get<Array<Quiz>>(environment.backendHost+"/api/quizzes");
   }
-
 }
