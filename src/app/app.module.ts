@@ -17,6 +17,8 @@ import { FooterComponent } from './footer/footer.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { QuizCardComponent } from './quizzes/quiz-card/quiz-card.component';
 import { QuizPlayComponent } from './quizzes/quiz-play/quiz-play.component';
+import { QuizCreateComponent } from './quiz-create/quiz-create.component';
+import { AddQuestionComponent } from './quiz-create/add-question/add-question.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { QuizPlayComponent } from './quizzes/quiz-play/quiz-play.component';
     FooterComponent,
     QuizzesComponent,
     QuizCardComponent,
-    QuizPlayComponent
+    QuizPlayComponent,
+    QuizCreateComponent,
+    AddQuestionComponent
   ],
   imports: [
     BrowserModule,

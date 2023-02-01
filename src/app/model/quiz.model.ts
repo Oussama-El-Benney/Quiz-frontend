@@ -1,15 +1,14 @@
 export class Quiz{
-  public id : number;
-  public name: string;
-  public description: string;
+  public id : number | undefined;
+  public name: string | undefined;
+  public description: string | undefined;
 
 
-  constructor(id: number,name: string, description: string) {
+ public constructor(id?: number,name?: string, description?: string) {
     this.id=id;
     this.name=name;
     this.description=description;
-
-  }
+  };
 }
 
 // id: number;

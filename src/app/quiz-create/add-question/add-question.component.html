@@ -1,0 +1,117 @@
+<div class="flex flex   justify-center">
+  <form class="w-full max-w-lg"
+        (ngSubmit)="onSubmit(f)"
+        #f="ngForm">
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full  px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="question">
+          Enter The Question
+        </label>
+        <input
+          class=" appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          placeholder="Cool quiz name"
+          type="text"
+          id="question"
+          name="question"
+          ngModel
+          required>
+        <p class="text-red-500 text-xs italic">Please fill out this field.</p>
+      </div>
+    </div>
+    <div class=" mb-6">
+      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+        <p class=" uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Choices</p>
+        <div class="flex items-baseline font-normal mb-4">
+          <input
+            class="mr-4"
+            type="checkbox"
+            id="choice1checkbox"
+            name="choice1checkbox"
+            ngModel>
+          <input
+            class="appearance-none inline w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            placeholder="Enter Choice and tick if its correct"
+            type="text"
+            id="choice1"
+            name="choice1"
+            ngModel
+            required>
+        </div>
+        <div class="flex items-baseline font-normal mb-4">
+          <input
+            class="mr-4"
+            type="checkbox"
+            id="choice2checkbox"
+            name="choice2checkbox"
+            ngModel>
+          <input
+            class="appearance-none inline w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            placeholder="Enter Choice and tick if its correct"
+            type="text"
+            id="choice2"
+            name="choice2"
+            ngModel
+            required>
+        </div>
+        <div class="flex items-baseline font-normal mb-4">
+          <input
+            class="mr-4"
+            type="checkbox"
+            id="choice3checkbox"
+            name="choice3checkbox"
+            ngModel>
+          <input
+            class="appearance-none inline w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            placeholder="Enter Choice and tick if its correct"
+            type="text"
+            id="choice3"
+            name="choice3"
+            ngModel
+            required>
+        </div>
+        <div class="flex items-baseline font-normal">
+          <input
+            class="mr-4"
+            type="checkbox"
+            id="choice4checkbox"
+            name="choice4checkbox"
+            ngModel>
+          <input
+            class="appearance-none inline w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            placeholder="Enter Choice and tick if its correct"
+            type="text"
+            id="choice4"
+            name="choice4"
+            ngModel
+            required>
+        </div>
+      </label>
+
+
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <button
+          class="bg-blue-200 text-blue-500 font-semibold  py-2 px-4 mt-4 mr-4 border border-transparent  rounded"
+          type="submit"
+          [disabled]="!f.valid">{{ editMode ? 'Update' : 'Add' }}</button>
+        <button
+          class="bg-red-200  text-red-500 font-semibold  py-2 px-4 mt-4 mr-4 border border-transparent  rounded"
+          type="button"
+          (click)="onDelete()"
+          *ngIf="editMode">Delete
+        </button>
+        <button class="bg-green-300  text-green-500 font-semibold  py-2 px-4 mt-4 mr-4 border border-transparent  rounded"
+                type="button"
+                (click)="onClear()">
+          Clear
+        </button>
+        <button class="bg-red-200  text-red-500 font-semibold  py-2 px-4 mt-4 mr-4 border border-transparent  rounded"
+                type="button"
+                (click)="onClear()">
+          Finished adding
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

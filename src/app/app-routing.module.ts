@@ -7,11 +7,15 @@ import {QuizCatComponent} from "./quiz-cat/quiz-cat.component";
 import {QuizItemComponent} from "./quiz/quiz-item/quiz-item.component";
 import {QuizzesComponent} from "./quizzes/quizzes.component";
 import {QuizPlayComponent} from "./quizzes/quiz-play/quiz-play.component";
+import {QuizCreateComponent} from "./quiz-create/quiz-create.component";
+import {AddQuestionComponent} from "./quiz-create/add-question/add-question.component";
 
 const routes: Routes = [
   {path: "quiz", component: QuizComponent},
   {path: "quizzes", component: QuizzesComponent},
   {path: "quizzes/1", component: QuizPlayComponent},
+  {path: "quizzes/create", component: QuizCreateComponent},
+  {path: "quizzes/create/add-question", component: AddQuestionComponent},
   {path: "quiz/:id", component: QuizItemComponent},
   {path: "category", component: QuizCatComponent},
   {path: "", component: HomeComponent},
