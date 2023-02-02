@@ -20,7 +20,7 @@ export class QuizCreateComponent implements OnInit {
   addQuest! : boolean;
   questNbr$! : Observable<number>;
   questNbr! : number;
-  addedQuiz! : any;
+  addedQuiz! : Quiz;
   constructor(private quizService: QuizService,
               private router: Router,) { }
 
@@ -60,9 +60,10 @@ export class QuizCreateComponent implements OnInit {
       this.quizService.addQuiz(newQuiz).subscribe(data => {
         console.log(data)
         this.addedQuiz = data;
+        this.router.navigate(['quizzes/create/add-question'], {queryParams: {quizId: this.addedQuiz.id}});
       });
-      this.router.navigate(['quizzes/create/add-question'], {queryParams: {quizId: this.addedQuiz.id}});
     }
+
     this.editMode = false;
     form.reset();
   }

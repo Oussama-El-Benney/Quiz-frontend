@@ -1,7 +1,7 @@
 export class Question{
   public id : number | undefined;
   public question: string | undefined;
-  public choices: Array<string> | undefined;
+  public choices: string[];
   public correctChoice: string;
   public quizFatherId: number;
  public constructor(id: number,question: string, choices: Array<string>, correctChoice: string,quizFatherId: number) {

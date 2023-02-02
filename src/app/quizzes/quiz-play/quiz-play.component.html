@@ -1,137 +1,154 @@
-<div class="mx-64 my-16 h-200 w-200 border border-blue-500 rounded-lg flex flex-col  justify-center">
+<div class="mx-64 my-16  w-200 border border-blue-500 rounded-lg flex flex-col  justify-center">
 
   <div class="m-6">
-    <p class="font-bold text-xl text-blue-500 "> Angular Quiz</p>
-    <p class="text-l text-slate-500"> Read the following instructions</p>
+    <p class="font-bold text-xl text-blue-500 "> {{quiz.name}}</p>
+    <p class="text-l text-slate-500">{{quiz.description}}</p>
   </div>
 
   <div class="grid grid-cols-2 divide-x-0">
-  <div class=" flex justify-center border border-blue-500 rounded-lg m-2 p-2">
-    <img src="assets/logo.png" class="h-40 flex-initial" alt="">
-  </div>
-  <div class="px-2 m-2">
-    <p class="font-bold text-xl text-blue-500 "> Date : <span class="inine font-normal text-base text-slate-500 ml-20"> 27/1/2007</span></p>
-    <p class="font-bold text-xl text-blue-500 "> Time Limit : <span class="inine font-normal text-base text-slate-500 ml-6"> 30 mins</span></p>
-    <p class="font-bold text-xl text-blue-500 "> Attempts : <span class="inine font-normal text-base text-slate-500 ml-8"> once</span></p>
-    <p class="font-bold text-xl text-blue-500 "> Points : <span class="inine font-normal text-base text-slate-500 ml-16"> Easy - 20 Points
+    <div class=" flex justify-center border border-blue-500 rounded-lg m-2 p-2">
+      <img src="assets/logo.png" class="h-40 flex-initial" alt="">
+    </div>
+    <div class="px-2 m-2">
+      <p class="font-bold text-xl text-blue-500 "> Date : <span
+        class="inine font-normal text-base text-slate-500 ml-20"> 27/1/2007</span></p>
+      <p class="font-bold text-xl text-blue-500 "> Time Limit : <span
+        class="inine font-normal text-base text-slate-500 ml-6"> 30 mins</span></p>
+      <p class="font-bold text-xl text-blue-500 "> Attempts : <span
+        class="inine font-normal text-base text-slate-500 ml-8"> once</span></p>
+      <p class="font-bold text-xl text-blue-500 "> Points : <span
+        class="inine font-normal text-base text-slate-500 ml-16"> Easy - 20 Points
 <span class="block font-normal text-base text-slate-500 ml-36">Meduim - 50 Points </span>
 <span class="block font-normal text-base text-slate-500 ml-36">Hard - 100 Points</span> </span></p>
 
-  </div>
-  </div>
-  <div class=" m-4">
-    <p class="font-bold text-xl text-blue-500 ">Instructions</p>
-    <p class="block font-normal text-base text-slate-500 ">This quiz consists of 5 multiple-choice questions. To be successful with the quizzes, it’s important to conversant with the topics. Keep the following in mind:
-<br>Timing - You need to complete each of your attempts in one sitting, as you are allotted 30 minutes to each attempt.
-      <br>Answers - You may review your answer-choices and compare them to the correct answers after your final attempt.
-
-      <br>To start, click the "Start" button. When finished, click the "Submit " button. </p>
-  </div>
-  <div class=" m-2 flex flex-row-reverse">
-<div>
-    <button
-      class="bg-blue-200  text-blue-500 font-semibold  py-2 px-4 mt-4 mr-4 border border-transparent  rounded">
-      Play Quiz
-    </button>
-</div>
-    <div class="mr-16">
-    <p class="font-bold  text-blue-500 ">Choose Diffuculty</p>
-    <div class="flex block">
-      <div class="inline-flex items-center">
-        <label
-          class="relative flex cursor-pointer items-center rounded-full p-3"
-          for="easy"
-          data-ripple-dark="true"
-        >
-          <input
-            id="easy"
-            name="type"
-            type="radio"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-blue-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
-          />
-          <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-blue-500 opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-3.5 w-3.5"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-            >
-              <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-            </svg>
-          </div>
-        </label>
-        <label
-          class="mt-px cursor-pointer select-none font-bold text-gray-700"
-          for="easy"
-        >
-          Easy
-        </label>
-      </div>
-      <div class="inline-flex items-center">
-        <label
-          class="relative flex cursor-pointer items-center rounded-full p-3"
-          for="medium"
-          data-ripple-dark="true"
-        >
-          <input
-            id="medium"
-            name="type"
-            type="radio"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-blue-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
-          />
-          <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-blue-500 opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-3.5 w-3.5"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-            >
-              <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-            </svg>
-          </div>
-        </label>
-        <label
-          class="mt-px cursor-pointer select-none font-bold text-gray-700"
-          for="medium"
-        >
-          Medium
-        </label>
-      </div>
-      <div class="inline-flex items-center">
-        <label
-          class="relative flex cursor-pointer items-center rounded-full p-3"
-          for="hard"
-          data-ripple-dark="true"
-        >
-          <input
-            id="hard"
-            name="type"
-            type="radio"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-blue-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
-          />
-          <div class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-blue-500 opacity-0 transition-opacity peer-checked:opacity-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-3.5 w-3.5"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-            >
-              <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
-            </svg>
-          </div>
-        </label>
-        <label
-          class="mt-px cursor-pointer select-none font-bold text-gray-700"
-          for="hard"
-        >
-          Hard
-        </label>
-      </div>
-    </div>
     </div>
   </div>
+  <div *ngIf="displayIntruct">
+    <div class=" m-4">
+      <p class="font-bold text-xl text-blue-500 ">Instructions</p>
+      <p class="block font-normal text-base text-slate-500 ">This quiz consists of 5 multiple-choice questions. To be
+        successful with the quizzes, it’s important to conversant with the topics. Keep the following in mind:
+        <br>Timing - You need to complete each of your attempts in one sitting, as you are allotted 30 minutes to each
+        attempt.
+        <br>Answers - You may review your answer-choices and compare them to the correct answers after your final
+        attempt.
 
+        <br>To start, click the "Start" button. When finished, click the "Submit " button. </p>
+    </div>
+    <div class=" m-2 flex flex-row-reverse">
+      <div>
+        <button
+          class="bg-blue-200  text-blue-500 font-semibold  py-2 px-4 mt-4 mr-4 border border-transparent  rounded"
+          [routerLink]="'playing'"
+          (click)="onPlay()">
+          Play Quiz
+        </button>
+      </div>
+      <div class="mr-16">
+        <p class="font-bold  text-blue-500 ">Choose Diffuculty</p>
+        <div class="flex block">
+          <div class="inline-flex items-center">
+            <label
+              class="relative flex cursor-pointer items-center rounded-full p-3"
+              for="easy"
+              data-ripple-dark="true"
+            >
+              <input
+                id="easy"
+                name="type"
+                type="radio"
+                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-blue-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
+              />
+              <div
+                class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-blue-500 opacity-0 transition-opacity peer-checked:opacity-100">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-3.5 w-3.5"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                >
+                  <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+                </svg>
+              </div>
+            </label>
+            <label
+              class="mt-px cursor-pointer select-none font-bold text-gray-700"
+              for="easy"
+            >
+              Easy
+            </label>
+          </div>
+          <div class="inline-flex items-center">
+            <label
+              class="relative flex cursor-pointer items-center rounded-full p-3"
+              for="medium"
+              data-ripple-dark="true"
+            >
+              <input
+                id="medium"
+                name="type"
+                type="radio"
+                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-blue-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
+              />
+              <div
+                class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-blue-500 opacity-0 transition-opacity peer-checked:opacity-100">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-3.5 w-3.5"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                >
+                  <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+                </svg>
+              </div>
+            </label>
+            <label
+              class="mt-px cursor-pointer select-none font-bold text-gray-700"
+              for="medium"
+            >
+              Medium
+            </label>
+          </div>
+          <div class="inline-flex items-center">
+            <label
+              class="relative flex cursor-pointer items-center rounded-full p-3"
+              for="hard"
+              data-ripple-dark="true"
+            >
+              <input
+                id="hard"
+                name="type"
+                type="radio"
+                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-blue-500 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-blue-500 checked:before:bg-blue-500 hover:before:opacity-10"
+              />
+              <div
+                class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-blue-500 opacity-0 transition-opacity peer-checked:opacity-100">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-3.5 w-3.5"
+                  viewBox="0 0 16 16"
+                  fill="currentColor">
+                  <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+                </svg>
+              </div>
+            </label>
+            <label
+              class="mt-px cursor-pointer select-none font-bold text-gray-700"
+              for="hard"
+            >
+              Hard
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div >
 
+    <app-quiz-playing *ngFor="let questionEl of questions$ | async; let i = index"
+                      [question]="questionEl"
+                      [index]="i"></app-quiz-playing>
+  </div>
+  <router-outlet></router-outlet>
 
-
-</div>
+</div>*

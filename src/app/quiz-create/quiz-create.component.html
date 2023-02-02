@@ -1,5 +1,5 @@
 
-<div class="flex flex   justify-center">
+<div class="flex flex my-8  justify-center">
   <form class="w-full max-w-lg"
         (ngSubmit)="onSubmit(f)"
         #f="ngForm">
@@ -82,14 +82,3 @@
     </div>
   </form>
 </div>
-
-<ng-template #addQuestion>
-  <p>This is the content of the template</p>
-</ng-template>
-
-<button (click)="onAddQuestion(questNbr$)">Toggle Template</button>
-
-
-<ng-container *ngFor="let in of counter(questNbr)">
-  <ng-container *ngTemplateOutlet="addQuestion"></ng-container>
-</ng-container>
