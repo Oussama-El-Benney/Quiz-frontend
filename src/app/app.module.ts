@@ -10,7 +10,6 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 import {Routes} from "@angular/router";
-import {LoginComponent} from "./login/login.component";
 import { QuizCatComponent } from './quiz-cat/quiz-cat.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -27,7 +26,6 @@ import { QuizPlayingComponent } from './quizzes/quiz-playing/quiz-playing.compon
     HomeComponent,
     QuizComponent,
     QuizItemComponent,
-    LoginComponent,
     QuizCatComponent,
     HeaderComponent,
     FooterComponent,
