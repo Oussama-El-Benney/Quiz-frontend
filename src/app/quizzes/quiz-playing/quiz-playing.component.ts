@@ -15,6 +15,7 @@ export class QuizPlayingComponent implements OnInit {
   quiz!: Quiz;
   questions!: Array<Question>;
   quizId!: number;
+  choice! :string;
   currentQuestion= 0;
   @Input() question!: Question;
   @Input() index!: number;
@@ -53,29 +54,28 @@ export class QuizPlayingComponent implements OnInit {
     })
   }
 
-  onSubmit(form: NgForm) {
-    const value = form.value;
-    console.log(value.choice2checkbox);
-    let userChoice = this.getUserChoice(value);
-    console.log(userChoice);
+  onSubmit(choice : string) {
+    if(this.choice === choice)
+        this.choice ="";
+    else
+        this.choice =choice ;
+
+    console.log(this.choice);
+
+
+    // let userChoice = this.getUserChoice(value);
+    // console.log(userChoice);
 
     // console.log(this.quizId);
     // this.quizService.verifyAnswer(newQuestion).subscribe(data => {
     //   console.log(data)
     //   this.addedQuestion = data;
     // });
-    this.currentQuestion++;
-    form.reset();
-  }
-  getUserChoice(value: any) {
-    if (value.choice1checkbox) {
-      return value.choice1;
-    } else if (value.choice2checkbox) {
-      return value.choice2;
-    } else if (value.choice3checkbox) {
-      return value.choice3;
-    }
-    return value.choice4;
+    // form.reset();
   }
 
+
+  onConfirm() {
+    this.currentQuestion++;
+  }
 }

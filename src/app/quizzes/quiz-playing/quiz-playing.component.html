@@ -1,68 +1,33 @@
 <div class="m-6">
   <div class="flex my-8">
     <form class="w-full max-w-lg"
-          (ngSubmit)="onSubmit(f)"
+
           #f="ngForm">
       <p class=" uppercase tracking-wide text-gray-700 text-xs font-bold mb-1">Question : </p>
       <p class="text-xl font-bold text-slate-800">{{questions[currentQuestion].question}}</p>
         <label class="block  tracking-wide text-gray-700 text-lg font-bold my-2">
           <p class=" uppercase tracking-wide text-blue-500 text-base font-bold mb-2">Choose an Answer</p>
-          <div class="flex items-baseline font-bold mb-4">
-            <input
-              class="mr-4"
-              type="checkbox"
-              id="choice1checkbox"
-              name="choice1checkbox"
-              ngModel>
-            <p
-              class="appearance-none inline w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            > {{questions[currentQuestion]?.choices}}</p>
-          </div>
+
         </label>
-      <label class="block  tracking-wide text-gray-700 text-lg font-bold my-2">
-          <div class="flex items-baseline font-bold mb-4">
-            <input
-              class="mr-4"
-              type="checkbox"
-              id="choice2checkbox"
-              name="choice2checkbox"
-              ngModel>
-            <p
-              class="appearance-none inline w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            > {{questions[currentQuestion]?.choices}}</p>
-          </div>
-      </label>
-      <label class="block  tracking-wide text-gray-700 text-lg font-bold my-2">
-          <div class="flex items-baseline font-bold mb-4">
-            <input
-              class="mr-4"
-              type="checkbox"
-              id="choice3checkbox"
-              name="choice3checkbox"
-              ngModel>
-            <p
-              class="appearance-none inline w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            > {{questions[currentQuestion]?.choices}}</p>
-          </div>
-      </label>
-      <label class="block  tracking-wide text-gray-700 text-lg font-bold my-2">
-          <div >
+
+      <label (click)="onSubmit(choice)" *ngFor="let choice of questions[currentQuestion]?.choices" class="block  tracking-wide text-gray-700 text-lg font-bold my-2">
+          <div
             class="flex items-baseline font-bold">
             <input
               class="mr-4"
               type="checkbox"
-              id="choice4checkbox"
-              name="choice4checkbox"
+              name="choice"
               ngModel>
             <p
               class="appearance-none inline w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-            > {{questions[currentQuestion]?.choices[0]}}</p>
+            > {{choice}}</p>
           </div>
       </label>
       <button
-        class="bg-blue-200 text-blue-500 font-semibold  py-2 px-4 mt-4 mr-4 border border-transparent  rounded"
+        class="bg-blue-200 text-blue-500 font-semibold py-2 px-4 mt-4 mr-4 border border-transparent  rounded"
         type="submit"
         [disabled]="!f.valid"
+        (click)="onConfirm()"
       >Confirm</button>
 
 
