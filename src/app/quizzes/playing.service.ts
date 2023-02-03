@@ -7,5 +7,6 @@ import {BehaviorSubject, Subject} from "rxjs";
 export class PlayingService {
   displayIntruct$ =new Subject<boolean>();
   startedPlayingQuiz$ = new BehaviorSubject<number>(0);
+  userScore$ = new BehaviorSubject<number>(0);
   constructor() { }
 }

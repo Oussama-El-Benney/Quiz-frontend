@@ -5,6 +5,7 @@ import {Quiz} from "../../model/quiz.model";
 import {Question} from "../../model/question.model";
 import {PlayingService} from "../playing.service";
 import {NgForm} from "@angular/forms";
+import {UserAnswer} from "../../model/userAnswer.model";
 
 @Component({
   selector: 'app-quiz-playing',
@@ -19,6 +20,7 @@ export class QuizPlayingComponent implements OnInit {
   currentQuestion= 0;
   @Input() question!: Question;
   @Input() index!: number;
+  private userScore= 0;
   constructor(private quizService: QuizService,
               private playingService: PlayingService,
               private route: ActivatedRoute,
@@ -63,19 +65,28 @@ export class QuizPlayingComponent implements OnInit {
     console.log(this.choice);
 
 
-    // let userChoice = this.getUserChoice(value);
-    // console.log(userChoice);
-
-    // console.log(this.quizId);
-    // this.quizService.verifyAnswer(newQuestion).subscribe(data => {
+    // this.quizService.verifyAnswer(userAnswer).subscribe(data => {
     //   console.log(data)
     //   this.addedQuestion = data;
     // });
-    // form.reset();
   }
 
 
   onConfirm() {
-    this.currentQuestion++;
+    console.log(this.questions[this.currentQuestion].id);
+    let userAnswer = new UserAnswer(this.questions[this.currentQuestion].id,this.choice);
+    console.log(userAnswer);
+    this.quizService.verifyAnswer(userAnswer).subscribe(data => {
+      console.log(data);
+      (data) ? this.userScore++ : this.userScore--;
+    });
+    console.log(this.userScore);
+    console.log(this.questions.length);
+    if((this.questions.length-1)==this.currentQuestion){
+      this.playingService.userScore$.next(this.userScore);
+      // this.router.navigate(['/quiz-result']);
+      this.router.navigate(['../quiz-result'], {relativeTo: this.route});
+    }
+ else   this.currentQuestion++;
   }
 }

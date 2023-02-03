@@ -9,6 +9,7 @@ import {QuizPlayComponent} from "./quizzes/quiz-play/quiz-play.component";
 import {QuizCreateComponent} from "./quiz-create/quiz-create.component";
 import {AddQuestionComponent} from "./quiz-create/add-question/add-question.component";
 import {QuizPlayingComponent} from "./quizzes/quiz-playing/quiz-playing.component";
+import {QuizResultComponent} from "./quizzes/quiz-result/quiz-result.component";
 
 const routes: Routes = [
   {path: "quiz", component: QuizComponent},
@@ -16,8 +17,10 @@ const routes: Routes = [
   {
     path: "quizzes/:id", component: QuizPlayComponent, children: [
       {path: "playing", component: QuizPlayingComponent},
+      {path: "quiz-result", component: QuizResultComponent},
     ]
   },
+
   {path: "quiz/create", component: QuizCreateComponent},
   {path: "quizzes/create/add-question", component: AddQuestionComponent},
   {path: "quiz/:id", component: QuizItemComponent},

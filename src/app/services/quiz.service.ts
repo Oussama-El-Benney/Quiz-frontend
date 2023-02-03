@@ -5,6 +5,7 @@ import {Observable, Subject} from "rxjs";
 // import {environment} from "../../environments/environment";
 import {Quiz} from "../model/quiz.model";
 import {Question} from "../model/question.model";
+import {UserAnswer} from "../model/userAnswer.model";
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,10 @@ export class QuizService {
 
   public addQuestion(question: Question): Observable<Question> {
     return this.http.post<Question>(this.backendHost + "/api/add-question-to-quiz", question);
+  }
+
+  public verifyAnswer(userAnswer: UserAnswer): Observable<boolean> {
+    return this.http.post<boolean>(this.backendHost + "/api/verify-user-answer", userAnswer);
   }
 
   deleteQuiz(editedItemIndex: number) {

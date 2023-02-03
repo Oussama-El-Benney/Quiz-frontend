@@ -1,6 +1,6 @@
 export class Question{
-  public id : number | undefined;
-  public question: string | undefined;
+  public id! : number ;
+  public question!: string;
   public choices: string[];
   public correctChoice: string;
   public quizFatherId: number;
